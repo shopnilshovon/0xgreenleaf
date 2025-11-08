@@ -1,0 +1,6 @@
+[
+  "function stake(uint256 poolId,uint256 amount) external",
+  "function withdraw(uint256 poolId,uint256 index) external",
+  "function claimReward(uint256 poolId,uint256 index) external",
+  "function stakeCount(uint256 poolId,address user) view returns (uint256)"
+]

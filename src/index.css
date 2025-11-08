@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --greenleaf: #0E9F6E;
+  --greenleaf-dark: #0B754F;
+}
+html,body,#root{height:100%}
+body{ @apply bg-greenleaf-50 font-sans text-slate-900; }
+
+.btn-primary{ @apply bg-[var(--greenleaf)] hover:bg-[var(--greenleaf-dark)] text-white px-4 py-2 rounded-xl shadow-soft; }
+.card{ @apply bg-white rounded-2xl shadow-card p-6; }
+
+.menu-item{ @apply flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-slate-100; }
+.menu-item-active{ @apply bg-green-50 font-medium; }

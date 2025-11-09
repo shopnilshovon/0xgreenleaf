@@ -14,3 +14,29 @@ body{ @apply bg-greenleaf-50 font-sans text-slate-900; }
 
 .menu-item{ @apply flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-slate-100; }
 .menu-item-active{ @apply bg-green-50 font-medium; }
+
+/* ...তোমার আগের index.css উপরের অংশ যেমন আছে থাকবে... */
+
+/* Sidebar polish */
+.sidebar { @apply bg-white rounded-2xl shadow-card h-full flex flex-col; }
+.menu-item { 
+  @apply flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition;
+}
+.menu-item:hover { @apply bg-slate-100; }
+.menu-item-active { @apply bg-green-50; }
+.menu-icon {
+  @apply w-8 h-8 rounded-lg flex items-center justify-center;
+  background: #ECFDF5; /* green-50 */
+  color: var(--greenleaf);
+  font-weight: 700;
+}
+.menu-label { @apply text-sm; }
+
+/* collapse width */
+.sidebar-collapsed { width: 78px; }
+.sidebar-wide { width: 260px; }
+
+/* topbar chip */
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs;
+}

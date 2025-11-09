@@ -5,12 +5,17 @@ import PoolsGrid from "./PoolsGrid";
 import Modal from "./Modal";
 import WalletConnect from "./WalletConnect";
 import SettingsPanel from "./SettingsPanel";
+import SocialTasks from "./SocialTasks";
+import HolderRewards from "./HolderRewards";
 import { APP_TITLE } from "../config";
 
 export default function AppShell() {
-  const [active, setActive] = useState("dashboard");
+  const [active, setActive] = useState("dashboard"); // dashboard | airdrop | holderRewards | settings
   const [collapsed, setCollapsed] = useState(false);
   const [openSettings, setOpenSettings] = useState(false);
+
+  // keep modal settings for backward compatibility
+  const openSettingsModal = () => setOpenSettings(true);
 
   return (
     <div className="min-h-screen p-6">
@@ -25,13 +30,17 @@ export default function AppShell() {
               <h2 className="text-xl font-semibold">{APP_TITLE} Dashboard</h2>
               <div className="flex items-center gap-3">
                 <WalletConnect />
-                <button className="px-3 py-2 rounded-xl border" onClick={() => setOpenSettings(true)}>Settings</button>
+                <button className="px-3 py-2 rounded-xl border" onClick={openSettingsModal}>Settings</button>
               </div>
             </div>
 
             <TopBar />
+
             <div className="mt-6">
-              <PoolsGrid />
+              {active === "dashboard" && <PoolsGrid />}
+              {active === "airdrop" && <SocialTasks />}
+              {active === "holderRewards" && <HolderRewards />}
+              {active === "settings" && <SettingsPanel />}
             </div>
           </div>
         </div>

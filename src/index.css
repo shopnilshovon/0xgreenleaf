@@ -40,3 +40,17 @@ body{ @apply bg-greenleaf-50 font-sans text-slate-900; }
 .badge {
   @apply inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs;
 }
+/* ...তোমার আগের index.css একই থাকবে... */
+
+/* Popover (3-dot menu) */
+.popover {
+  @apply absolute z-40 bg-white rounded-2xl shadow-card p-2 border;
+  min-width: 200px;
+}
+.popover-item {
+  @apply flex items-center gap-2 px-3 py-2 rounded-xl cursor-pointer text-sm;
+}
+.popover-item:hover { @apply bg-slate-100; }
+.popover-backdrop {
+  @apply fixed inset-0 z-30;
+}
